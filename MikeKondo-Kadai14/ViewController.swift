@@ -13,9 +13,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fruitTableView.dataSource = self
-        fruitTableView.delegate = self
-        fruitTableView.register(UINib(nibName: FruitTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: FruitTableViewCell.identifier)
+        fruitTableViewSetup()
     }
 
     private var fruits = [Fruit(name: "りんご", isCheck: false),
@@ -32,6 +30,12 @@ class ViewController: UIViewController {
         default:
             break
         }
+    }
+
+    private func fruitTableViewSetup() {
+        fruitTableView.dataSource = self
+        fruitTableView.delegate = self
+        fruitTableView.register(UINib(nibName: FruitTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: FruitTableViewCell.identifier)
     }
 }
 
