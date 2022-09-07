@@ -11,15 +11,15 @@ class ViewController: UIViewController {
     // MARK: - UI Parts
     @IBOutlet private weak var fruitTableView: UITableView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        fruitTableViewSetup()
-    }
-
     private var fruits = [Fruit(name: "りんご", isCheck: false),
                       Fruit(name: "みかん", isCheck: true),
                       Fruit(name: "バナナ", isCheck: false),
                       Fruit(name: "パイナップル", isCheck: true)]
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fruitTableViewSetup()
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
