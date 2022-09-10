@@ -15,7 +15,7 @@ class InputFruitViewController: UIViewController {
     // MARK: - UI Parts
     @IBOutlet private weak var fruitNameTextField: UITextField!
 
-    var delegate: InputFruitViewControllerDelegate?
+    weak var delegate: InputFruitViewControllerDelegate?
 
     @IBAction private func didTapSaveFruitButton(_ sender: Any) {
         guard let fruitName = fruitNameTextField.text else { return }
@@ -24,6 +24,6 @@ class InputFruitViewController: UIViewController {
     }
 
     @IBAction private func didTapCancelButton(_ sender: Any) {
-       dismiss(animated: true)
+        dismiss(animated: true)
     }
 }
