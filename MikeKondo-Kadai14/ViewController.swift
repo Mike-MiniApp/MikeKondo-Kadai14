@@ -18,7 +18,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fruitTableViewSetup()
+        setupFruitTableView()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         }
     }
 
-    private func fruitTableViewSetup() {
+    private func setupFruitTableView() {
         fruitTableView.dataSource = self
         fruitTableView.delegate = self
         fruitTableView.register(UINib(nibName: FruitTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: FruitTableViewCell.identifier)
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
 // MARK: - UITableViewDelegate,UITableViewDataSource
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fruits.count
+        fruits.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
